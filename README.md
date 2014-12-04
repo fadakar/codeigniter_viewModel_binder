@@ -1,9 +1,9 @@
 viewModel_binder
 ================
 
-view model binder for bind **request** data to view model class in **codeigniter**
+View model binder for bind **request** data to view model class in **codeigniter**
 
-### How to include
+### How to include to **codeigniter**
 
 1. You need only **libraries** folder.
 2. Copy Request.php file to **codeigniter** application/libraries .
@@ -16,8 +16,8 @@ $autoload['libraries'] = array(
 ```
 
 ### Usage
-create a class for bind GET/POST request data
-for example create Employee view model
+Create a class for bind GET/POST request data
+For example create Employee view model
 ``` php
 class EmployeeViewModel
 {
@@ -27,8 +27,7 @@ class EmployeeViewModel
     public $salary;
 }
 ```
-
-#### next in your Controller/Action bind your request data with view model(Employee) :
+Next in your Controller/Action bind your request data with view model(Employee) :
 
 ``` php
 class DemoContoller extends CI_Controller
@@ -43,13 +42,13 @@ class DemoContoller extends CI_Controller
     }
 }
 ```
-### how to change request method(GET/POST) :
+### How to change request method(GET/POST) :
 ``` php
     Request::bind($viewModel,Request::POST); // POST request method , it's default
     Request::bind($viewModel,Request::GET); // GET request method
 ```
 
-### how to turn off xss filtering:
+### How to turn off xss filtering:
 ``` php
 //  GET request method without xss filtering
     Request::bind(
@@ -59,7 +58,7 @@ class DemoContoller extends CI_Controller
     ); 
 ```
 
-### how to skip one or more variable in view model class to bind :
+### How to skip one or more variable in view model class to bind :
 ``` php
 //  GET request method without xss filtering and skip salary
     Request::bind(
