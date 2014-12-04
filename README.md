@@ -3,7 +3,7 @@ viewModel_binder
 
 View model binder for bind **request** data to view model class in **codeigniter**
 
-### How to include to **codeigniter**
+### How to include to **codeigniter** :
 
 1. You need only **libraries** folder.
 2. Copy Request.php file to **codeigniter** application/libraries .
@@ -15,7 +15,7 @@ $autoload['libraries'] = array(
 );
 ```
 
-### Usage
+### Usage :
 Create a class for bind GET/POST request data
 For example create Employee view model
 ``` php
