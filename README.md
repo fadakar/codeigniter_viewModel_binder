@@ -1,4 +1,4 @@
-viewModel_binder
+Codeigniter_viewModel_binder
 ================
 
 View model binder for bind **request** data to view model class in **codeigniter**
