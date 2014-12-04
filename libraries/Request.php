@@ -16,7 +16,7 @@ class Request
      * @param bool $filter
      * @param array $exclusive
      */
-    public static function bind(&$view_model, $method = self::POST, $xss_filter = true, $exclusive = null)
+    public static function bind(&$view_model, $method = self::POST, $xss_filter = true, $exclusive = array())
     {
         $ci = get_instance();
 
@@ -41,9 +41,14 @@ class Request
         {
             return $view_model;
         }
-        if (!$exclusive)
+
+        if (is_array($exclusive) && count($exclusive) > 0)
         {
             $exclusive = explode(",", $exclusive);
+        }
+        else
+        {
+            $exclusive = array();
         }
 
         foreach ($vars as $var)
