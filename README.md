@@ -28,19 +28,20 @@ class EmployeeViewModel
 }
 ```
 
-next in your html file add some input :
+Next in your html file add some input :
 ```html
-<form action="<?= base_url("DemoController/add_submit")?>" method="POST">
+<form action="<?php echo base_url("DemoController/add_submit") ?>" method="POST">
     <input type="text" name="firstName" />
     <input type="text" name="lastName" />
-    <input type="number" name="age" />
+    <input type="text" name="age" />
     <input type="text" name="salary" />
+
+    <input type="submit" />
 </form>
 ```
 
 
 Next in your Controller/Action bind your request data with view model(Employee) :
-
 ``` php
 class DemoContoller extends CI_Controller
 {
