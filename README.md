@@ -38,7 +38,7 @@ class DemoContoller extends CI_Controller
         Request::bind($viewModel);
 
         // now $viewModel filled with request data
-        echo $viewModel->fisrtName . $viewModel->lastName;
+        echo $viewModel->firstName . $viewModel->lastName;
     }
 }
 ```
