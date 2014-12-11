@@ -20,6 +20,16 @@ class Request
     {
         $ci = get_instance();
 
+        if (is_array($method))
+        {
+            if (isset($method['xss']))
+                $xss_filter = $method['xss'];
+            if (isset($method['exclusive']))
+                $exclusive = $method['exclusive'];
+            if (isset($method['method']))
+                $method = $method['method'];
+        }
+
         $vars = array_keys(get_class_vars(get_class($view_model)));
         switch ($method)
         {
@@ -42,11 +52,7 @@ class Request
             return $view_model;
         }
 
-        if (is_array($exclusive) && count($exclusive) > 0)
-        {
-            $exclusive = explode(",", $exclusive);
-        }
-        else
+        if (!is_array($exclusive))
         {
             $exclusive = array();
         }
